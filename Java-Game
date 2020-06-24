@@ -1,0 +1,72 @@
+package school1;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
+public class Random {
+	public static void main(String[] args){
+		
+		Random r = new Random();
+		JOptionPane op = new JOptionPane();
+		
+		int r_int =  r.nextInt(10) + 1;
+		int k = 3;
+		int Easy = 0;
+		
+		for (int i = 0; i != r_int;) {
+ 
+			
+			 if (Easy == 0){
+				 
+				 
+				String h = "Gissa pÃ¥ ett tal mellan 1-10\n " +  "Liv kvar: " + k; 
+				String f = op.showInputDialog(h); // FrÃ¥n op till en String
+				i = Integer.parseInt(f);  // Nu frÃ¥n string till Int
+				
+			}else if (Easy == 1){
+				
+				if(i < r_int){
+					
+					String h = "Gissa pÃ¥ ett tal mellan 1-10\n " +  "Liv kvar: " + k + "\n" + "x  > " + i;
+					String f = op.showInputDialog(h);
+					i = Integer.parseInt(f);
+				}if(i > r_int){
+					
+					String h = "Gissa pÃ¥ ett tal mellan 1-10\n " +  "Liv kvar: " + k + "\n" + "x < " + i ;
+					String f = op.showInputDialog(h);
+					i = Integer.parseInt(f);
+					
+				}
+			}if (i == r_int){ // om du gissar rÃ¤tt
+				op.showMessageDialog(null, "Grattis");
+			}
+			else if (k <= 1){
+				
+				String R = "RÃ¤tt tal var: " + r_int + "\n Vill du prova igen?"; // Vissar rÃ¤tta svaret
+        	 	int YESNO = op.showConfirmDialog(null, R, "", op.YES_NO_CANCEL_OPTION); // GÃ¶r sÃ¥ du kan vÃ¤lja mellan om du vil bÃ¶rja om lr inte
+        	 	
+        	if (YESNO == op.YES_OPTION){
+        		
+        		i= 0; // Declares that when your lives hit 0 it restarts.
+        		k = 3; // lives
+        		Easy = 1; // if (easy == 1) startar lite lÃ¤ttare
+        		r_int = r.nextInt(10) + 1; // GÃ¶r om talet. annars Ã¤r det samma
+        		
+        	}else{
+        		
+        		System.exit(0); // om man inte vill kÃ¶ra igen stÃ¤ngs det ner
+        		
+        	}
+         }else{
+        	 k--;
+         }
+         					
+			
+		
+	}
+}
+
+	private int nextInt(int i) {
+		return 0;
+	}
+}
+//Should have made comments in english that are more adaptable to java
