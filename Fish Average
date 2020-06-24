@@ -1,0 +1,23 @@
+package Assignment;
+
+	import java.util.Scanner;
+
+	//Class fishes
+	public class Fishes extends myMethods {
+	    public static void main(String[] args) {
+	        // show the length of all fishes
+	        System.out.println("Length of all fishes all(in cm): " +
+	                            "20, 15, 35, 45, 30, 40, 25, 40, 20, 32 ");
+	        // feed in the length
+	        System.out.println("type in the length: ");
+	        Scanner sc = new Scanner(System.in);
+	        double[] v = new double[10];
+	        for (int i = 0; i < v.length; i++) {
+	            double d = sc.nextDouble();
+	             v[i] = d;
+	        }
+	        // You need to create the method average
+	        System.out.println(myMethod(v));
+	        
+	    }
+	}
