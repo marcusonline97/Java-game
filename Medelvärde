@@ -1,0 +1,134 @@
+/*******************************************************************************************************************************
+ * Detta program har syftet att räkna ut medelåldern på flera människor. 
+ * Jag tänker att ett sätt att göra programmet lite mer 
+ * Användaren kommer att få i uppgift att fylla i sitt kön och sedan kommer det upp en fråga om användarens ålder.
+ *  Sedan kommer användaren bli frågad om användaren är en kille eller tjej 
+ *  Varpå programmet tar in dessa uppgifter lagras uppgifterna och sedan frågar, vill du skriva in fler? om Ja så gör man om från start 
+ *  men med värdet fortfarande lagrat ifrån senaste output.
+ * Om Nej så tar programmet och räknar ut medelvärdet och sedan ska användaren svara på om dom vill skriva in fler personer 
+ *  om användaren är klar
+ * Och då skrivs medelåldern upp på både kvinnor och män.
+ * Sedan avslutat processen och programmet
+ ****************************************************************************************************************************************/
+package Testing;
+//Program is in package Testing
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+//importation of javax.swing.JFrame
+public class AverageAge {
+	public static void main(String[]Args){
+			 int femaleAge = 0; //Contains the value of womens age
+		        int maleAge = 0; //Contains the value of mens age
+		        double SumFemale = 0; //Contains the sum of all womens ages
+		        double SumMale = 0; //Contains the sum of all mens ages
+		        double AverageFem ; //Contains the average of women ages
+		        double AverageMale ; //Contains the average of mens ages
+		        boolean more = true ; //A value that will later be used in a while set
+		        boolean wrong = true ; //A value that will later be used in a while set
+//I ended up not geting to using the boolean wrong in my code but i had planned to use it to limit the users options of input to numbers instead of letters		        while (more) {
+
+		            String[] options = {"Woman", "Man"};
+		            int gender = JOptionPane.showOptionDialog(null,
+		                    "Persons Gender",
+		                    "Gender", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+		                    null, options, options[0]);
+		            //Dialogframe that gives options man or woman
+
+		       double Age = Double.parseDouble(JOptionPane.showInputDialog("Type in age")) ;
+		            String[] options2 = {"Yes", "No"};
+		            int again = JOptionPane.showOptionDialog(null,
+		                    "Yes",
+		                    "Add more ages?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+		                    null, options2, options2[0]);
+		            //Input where the program numbers that stands for age
+
+		            if (again == 1)
+		                more = false;
+		            else
+		                more = true;
+
+		            if (gender == 0) {
+		                femaleAge += 1;
+		                SumFemale += Age;
+		            } 
+		            else {
+		                maleAge += 1;
+		                SumMale += Age;
+		            }
+
+		        if (femaleAge != 0) {
+		            AverageFem = SumFemale / femaleAge;
+		            //Calculation of the average age of women
+		            JOptionPane.showMessageDialog(null,
+		                                          "of " + femaleAge + "Women have the Average age of " + AverageFem);
+		        }
+		        if (maleAge != 0) {
+		            AverageMale = SumMale / maleAge;
+		          //Calculation of the average age of men
+		            JOptionPane.showMessageDialog(null,
+		                                          "of " + maleAge + "Men have the Average age of " + AverageMale);
+		        }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
