@@ -1,0 +1,5 @@
+Machine m = new Machine() {
+@Override public void start(){
+System.out.println("Hi);
+}
+}
