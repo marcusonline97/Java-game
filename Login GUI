@@ -51,7 +51,7 @@ import javax.swing.JTextField;
      button.addActionListener(new Gui());
      panel.add(button);
      
-     success = new JLabel("Welcome");
+     success = new JLabel("");
      success.setBounds(10, 110, 300, 25);
      panel.add(success);
      
@@ -60,13 +60,16 @@ import javax.swing.JTextField;
 
      }
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent E) {
     	JTextField userText = null;
 		JPasswordField passwordText = null;
 		String user = userText.getText();
 		String password = passwordText.getText();
 		System.out.println(user + "," + password);
+		
+		if (user.equals("Alex")&& password.equals("123")) {
+			 JLabel success = null;
+			success.setText("Login Successful");
+		}
 	}
-} 
-
-//Imcomplete, needs more work to be finished
+}
